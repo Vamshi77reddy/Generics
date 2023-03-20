@@ -11,9 +11,15 @@ public class FindMaximun {
 		Double doubleNumber2 = 30.40; 
 		Double doubleNumber3 = 80.90;
 		
-		findMaximumDoubleNumber(doubleNumber1, doubleNumber2, doubleNumber3);
+		String fruit1 = "Apple";
+		String fruit2 = "Banana";
+		String fruit3 = "Peach";
 
+		
 		findMaximumNumber(number1, number2, number3);
+		findMaximumDoubleNumber(doubleNumber1, doubleNumber2, doubleNumber3);
+        findMaximumString(fruit1, fruit2, fruit3);
+
 	}
 
 	private static void findMaximumNumber(Integer number1, Integer number2, Integer number3) 
@@ -42,6 +48,18 @@ public class FindMaximun {
 			maximumNumber = doubleNumber3;
 		}
 		System.out.println("The maximum floating Number is "+ maximumNumber);
+	}
+	private static void findMaximumString(String fruit1, String fruit2, String fruit3) {
+		String maximumString = fruit1;
+		if (maximumString.compareTo(fruit2) < 0)
+		{
+			maximumString = fruit2;
+		}
+		if (maximumString.compareTo(fruit3) < 0)
+		{
+			maximumString = fruit3;
+		}
+		System.out.println("The maximum string is "+ maximumString);
 	}
 }
 
