@@ -1,6 +1,38 @@
 package com.bridgeLabz;
 
-public class FindMaximun {
+	public class FindMaximun <T extends Comparable<T>>
+	{
+		private T value1;
+		private T value2;
+		private T value3;
+
+		public FindMaximun(T value1, T value2, T value3) 
+		{
+			super();
+			this.value1 = value1;
+			this.value2 = value2;
+			this.value3 = value3;
+		}
+
+		public void findMax() 
+		{
+			findMaximum(this.value1, this.value2, this.value3);
+		}
+
+		public static <T extends Comparable<T>> void findMaximum(T value1, T value2, T value3) 
+		{
+			T maximum = value1;
+			if (maximum.compareTo(value2) < 0)
+			{
+				maximum = value2;
+			}
+			if (maximum.compareTo(value3) < 0 )
+			{
+				maximum = value3;
+			}
+			System.out.println("The Maximum is "+ maximum);
+		}
+	
 	public static void main(String[] args)
 	{
 		Integer number1 = 30;
@@ -14,52 +46,13 @@ public class FindMaximun {
 		String fruit1 = "Apple";
 		String fruit2 = "Banana";
 		String fruit3 = "Peach";
-
 		
-		findMaximumNumber(number1, number2, number3);
-		findMaximumDoubleNumber(doubleNumber1, doubleNumber2, doubleNumber3);
-        findMaximumString(fruit1, fruit2, fruit3);
+		FindMaximun<Integer> integer = new FindMaximun<Integer>(number1,number2,number3);
+		integer.findMax();
+		FindMaximun<Double> floatingNumber = new FindMaximun<Double>(doubleNumber1,doubleNumber2,doubleNumber3);
+		floatingNumber.findMax();
+		FindMaximun<String> stringValue  = new FindMaximun<String>(fruit1,fruit2,fruit3);
+		stringValue.findMax();
 
-	}
-
-	private static void findMaximumNumber(Integer number1, Integer number2, Integer number3) 
-	{
-		Integer maximumNumber = number1;
-		if (Integer.compare(maximumNumber, number2) == -1)
-		{
-			maximumNumber = number2;
-		}
-		if (Integer.compare(maximumNumber, number3) == -1)
-		{
-			maximumNumber = number3;
-		}
-
-		System.out.println("The maximum Number is "+ maximumNumber);
-	}
-	private static void findMaximumDoubleNumber(Double doubleNumber1, Double doubleNumber2,
-			Double doubleNumber3) {
-		Double maximumNumber = doubleNumber1;
-		if (Double.compare(maximumNumber, doubleNumber2) == -1)
-		{
-			maximumNumber = doubleNumber2;
-		}
-		if (Double.compare(maximumNumber, doubleNumber3) == -1)
-		{
-			maximumNumber = doubleNumber3;
-		}
-		System.out.println("The maximum floating Number is "+ maximumNumber);
-	}
-	private static void findMaximumString(String fruit1, String fruit2, String fruit3) {
-		String maximumString = fruit1;
-		if (maximumString.compareTo(fruit2) < 0)
-		{
-			maximumString = fruit2;
-		}
-		if (maximumString.compareTo(fruit3) < 0)
-		{
-			maximumString = fruit3;
-		}
-		System.out.println("The maximum string is "+ maximumString);
-	}
-}
-
+	}}
+		
